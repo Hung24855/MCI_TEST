@@ -4,6 +4,7 @@ import { LoginBody, RegisterBody } from "../model"
 import { LoginDTO, RegisterDTO } from "../dto"
 
 
+
 export class UserApi {
     static Register = async(body:RegisterBody)=>{
         try {
@@ -15,7 +16,7 @@ export class UserApi {
     }
 
     static Login = async(body:LoginBody)=>{
-        try {
+        try {     
             const {data} = await http.post<LoginDTO>(ENDPOINT_URL.login(),body)
             return data
         } catch (error) {
